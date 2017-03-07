@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevJobs.ie</title>
+    <link rel="stylesheet" href="static/lib/css/introjs.css"/>
+    <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/keen-dashboards.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css') }}">
+
+</head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./">Click here to reset filters</a>
+            <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();" data-step="1"
+                    data-intro="The description that you want" style="font-weight: normal" data-position="right">
+                Show me how this works!
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div id="outer" class="container-fluid">
+
+    <div class="col-sm-12">
+        <div class="row">
+            <!-- R1 -->
+            <div class="row">
+                <!-- Location -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <b>Where can I find a developer job?</b><br>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="location-row-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Location -->
+                <!-- Role -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <b>What types of roles are on offer?</b>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="role-pie-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Role -->
+                <!-- Level -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <b>What level of experience is being sought?</b>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="level-pie-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level -->
+                <!-- Industry -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <b>Which industries are hiring developers?</b>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="industry-pie-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Industry -->
+            </div>
+            <!-- EOR1 -->
+
+
+            <!-- R2 -->
+            <div class="row">
+
+                <!-- Company row -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="3" data-intro="The description that you want"
+                             style="font-weight: normal" data-position="right">
+                            <b>Who is hiring developers?</b><br>
+                            <i>Top 10 companies based on no. of job posts</i>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="company-row-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Company row -->
+                <!-- Results table -->
+                <div class="col-sm-9">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="3" data-intro="The description that you want"
+                             style="font-weight: normal" data-position="right">
+                            <b>My top 10 results</b><br>
+                            <i>Top 10 results based on my location, role, level, industry and company filters. Click on the URL to read the job ad</i>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="results-table">
+                                <div class='header'>
+                                    <span>Jobkey</span>
+                                    <span>Job title</span>
+                                    <span>Company</span>
+                                    <span>Link to full job advert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EOR2 -->
+
+            <!-- R1 -->
+            <div class="row">
+                <!-- Java hits -->
+                <div class="col-sm-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Keyword hits
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Java</th>
+                                <th>PHP</th>
+                                <th>JavaScript</th>
+                                <th>SQL</th>
+                                <th>Python</th>
+                                <th>.NET</th>
+                                <th>Angular</th>
+                                <th>WordPress</th>
+                                <th>C#</th>
+                                <th>CSS</th>
+                                <th>HTML</th>
+                                <th>NoSQL</th>
+                            </tr>
+                            <tr>
+                                <td id="java-hits"></td>
+                                <td id="php-hits"></td>
+                                <td id="javascript-hits"></td>
+                                <td id="sql-hits"></td>
+                                <td id="python-hits"></td>
+                                <td id="net-hits"></td>
+                                <td id="angular-hits"></td>
+                                <td id="wordpress-hits"></td>
+                                <td id="c-hits"></td>
+                                <td id="css-hits"></td>
+                                <td id="html-hits"></td>
+                                <td id="nosql-hits"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- End of hit table -->
+                <!-- ROW 4 -->
+                <div class="row">
+
+                    <!-- Time -->
+                    <div class="col-sm-12">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                                How many new jobs are being posted per day?
+                            </div>
+                            <div class="chart-stage">
+                                <div id="Posts-row-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Time -->
+
+                </div>
+                <!-- END OF ROW 4 -->
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p class="small text-muted"> Data viz &#9829; from Code Institute<a></a></p>
+
+    <script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
+    <script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
+    <script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
+    <script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
+
+    <script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
+    <script src="static/lib/js/intro.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

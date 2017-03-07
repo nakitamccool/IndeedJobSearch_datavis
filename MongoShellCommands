@@ -1,0 +1,207 @@
+Use sample regex --> { snippet: { $regex: /sql/, $options: '<options>' } } to search snippet
+Use MMS to create dimension --> Click on pen, add new property in JSON format that will be our new dimension e.g. sql = "true". New column will appear in table.
+Use mongo shell to make update -->
+#Sets sql="true" if snippet contains sql
+db.IJS.update({ snippet: { $regex: /sql/, $options: '<options>' } },{$set: {sql: 'true'}},{multi:true})
+#Sets sql="false" for everything else i.e. if sql =''
+db.IJS.update({sql: ''},{$set: {sql: 'false'}},{multi:true});
+
+Categories:
+JobCategory (Frontend, Backend, Full stack)
+Commands:
+db.IndeedJobSearch.update({Industry:''},{$set: {Industry: 'Tech, Media & Telecomms'}},{multi:true})
+db.IndeedJobSearch.update({$or: [{company:'Pramerica'}, {company: 'UnitedHealth Group']},{$set: {Industry: 'Healthcare'}},{multi:true})
+db.IndeedJobSearch.update({'jobtitle':{$regex: /sql/,$options:'<options>'}},{$set: {jobCategory: 'Backend Development'}},{multi:true})
+db.IndeedJobSearch.update({'jobtitle':{$regex: /python/,$options:'<options>'}},{$set: {jobCategory: 'Backend Development'}},{multi:true})
+
+USING REGEX TO SET INDUSTRY TO RECRUITMENT
+> db.IndeedJobSearch.update({company:{$regex: /Recruitment/}},{$set: {Industry: 'Professional Services'}},{multi:true})
+
+USING REGEX TO SET LEVEL TO INTERN/GRADUATE
+> db.IndeedJobSearch.update({jobtitle :{$regex: /Graduate/i}},{$set: {level: 'Intern/ Graduate'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /Intern/i}},{$set: {level: 'Intern/ Graduate'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /Trainee/i}},{$set: {level: 'Intern/ Graduate'}},{multi:true})
+
+USING REGEX TO SET LEVEL TO JUNIOR
+> db.IndeedJobSearch.update({jobtitle :{$regex: /junior/i}},{$set: {level: 'Junior'}},{multi:true})
+
+USING REGEX TO SET LEVEL TO SENIOR
+> db.IndeedJobSearch.update({jobtitle :{$regex: /senior/i}},{$set: {level: 'Senior'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /principal/i}},{$set: {level: 'Senior'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /sr./i}},{$set: {level: 'Senior'}},{multi:true})
+
+
+USING REGEX TO SET jobCategory to front end, back end, full stack
+FRONT END
+> db.IndeedJobSearch.update({jobtitle :{$regex: /front end/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /front-end/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /html/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /css/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /wordpress/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /php/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /graphics/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /design/i}},{$set: {jobCategory: 'Front end developer'}},{multi:true})
+
+
+
+BACK END
+> db.IndeedJobSearch.update({jobtitle :{$regex: /back end/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /back-end/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /backend/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /sql/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /python/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /.NET/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /.C#/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /noSQL/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /Mongo/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /Database/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /big data/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /analytics/i}},{$set: {jobCategory: 'Back end developer'}},{multi:true})
+
+
+
+FULL STACK
+> db.IndeedJobSearch.update({jobtitle :{$regex: /full stack end/i}},{$set: {jobCategory: 'Full stack developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /javascript/i}},{$set: {jobCategory: 'Full stack developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /typescript/i}},{$set: {jobCategory: 'Full stack developer'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /java/i}},{$set: {jobCategory: 'Full stack developer'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /full-stack/i}},{$set: {jobCategory: 'Full stack developer'}},{multi:true})
+
+DEVOPS
+db.IndeedJobSearch.update({jobtitle :{$regex: /devops/i}},{$set: {jobCategory: 'DevOps Engineer'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /dev ops/i}},{$set: {jobCategory: 'DevOps Engineer'}},{multi:true})
+db.IndeedJobSearch.update({jobtitle :{$regex: /site reliability engineer/i}},{$set: {jobCategory: 'DevOps Engineer'}},{multi:true})
+
+LANGUAGE/TOOLS
+1. Set up new dimensions, default to False
+> db.IndeedJobSearch.update({stations: ''},{$set: {HTML: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {CSS: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {Wordpress: 'False'}},{multi:true})
+db.IndeedJobSearch.update({stations: ''},{$set: {PHP: 'False'}},{multi:true})
+db.IndeedJobSearch.update({stations: ''},{$set: {SQL: 'False'}},{multi:true})
+db.IndeedJobSearch.update({stations: ''},{$set: {Python: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {.NET: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {C#: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {NoSQL: 'False'}},{multi:true})
+db.IndeedJobSearch.update({stations: ''},{$set: {JavaScript: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {TypeScript: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({{stations: ''},{$set: {Java: 'False'}},{multi:true})***
+> db.IndeedJobSearch.update({stations: ''},{$set: {Mongo: 'False'}},{multi:true})
+> db.IndeedJobSearch.update({stations: ''},{$set: {Angular: 'False'}},{multi:true})
+2. Run query and populate
+> db.IndeedJobSearch.update({snippet :{$regex: /html/i}},{$set: {HTML: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /css/i}},{$set: {CSS: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /wordpress/i}},{$set: {Wordpress: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /php/i}},{$set: {PHP: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /sql/i}},{$set: {SQL: 1}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /python/i}},{$set: {Python: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /.NET /}},{$set: {NET: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /C#/i}},{$set: {'C#': 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /noSQL/i}},{$set: {NoSQL: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /javascript/i}},{$set: {JavaScript: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /typescript/i}},{$set: {TypeScript: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /java/i}},{$set: {Java: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /mongo/i}},{$set: {Mongo: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({snippet :{$regex: /angular/i}},{$set: {Angular: 'True'}},{multi:true})
+
+> db.IndeedJobSearch.update({jobtitle :{$regex: /html/i}},{$set: {HTML: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /css/i}},{$set: {CSS: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /wordpress/i}},{$set: {Wordpress: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /php/i}},{$set: {PHP: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /sql/i}},{$set: {SQL: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /python/i}},{$set: {Python: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /.NET /}},{$set: {NET: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /C#/i}},{$set: {'C#': 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /noSQL/i}},{$set: {NoSQL: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /javascript/i}},{$set: {JavaScript: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /typescript/i}},{$set: {TypeScript: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /java /i}},{$set: {Java: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /mongo/i}},{$set: {Mongo: 'True'}},{multi:true})
+> db.IndeedJobSearch.update({jobtitle :{$regex: /angular/i}},{$set: {Angular: 'True'}},{multi:true})
+
+USING REGEX TO SET INDUSTRY
+> db.IndeedJobSearch.update({Industry: 'Tech, Media & Telecomms'},{$set: {Industry: 'Tech, Media & Telecomms'}},{multi:true})
+WriteResult({ "nMatched" : 249, "nUpserted" : 0, "nModified" : 0 })
+> db.IndeedJobSearch.update({company: 'Pramerica'},{$set: {Industry: 'Healthcare'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'UnitedHealth Group'},{$set: {Industry: 'Healthcare'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Ancestry'},{$set: {Industry: 'Other'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'La Tene Maps'},{$set: {Industry: 'Other'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Pernod Ricard'},{$set: {Industry: 'Other'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Pernod Ricard'},{$set: {Industry: 'Consumer Business'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Fender'},{$set: {Industry: 'Consumer Business'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Ille Paper Service (Irl) Ltd'},{$set: {Industry: 'Consumer Business'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'Rational Group'},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: 'bookah'},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company: {$regex: /bet/,$options:'<options>'}},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Betfair'},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Paddy Power Betfair'},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'BetBright'},{$set: {Industry: 'Entertainment'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.IndeedJobSearch.update({company:'Deutsche Bank'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'MasterCard'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Citi'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Geneva Trading'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Fidelity Investments'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Bloomberg'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Bank of America'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.IndeedJobSearch.update({company:'Aviva'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Zurich Insurance Group'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'StepStone Global'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'StepStone Marsh'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.IndeedJobSearch.update({company:'Marsh'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Susquehanna International Group'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Liberty IT'},{$set: {Industry: 'Financial Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Version 1'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Sogeti'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Dun & Bradstreet'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Abrivia'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'AECOM'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Compliance & Risks'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'OPM'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Amaris'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'IT Alliance Ltd'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Fjord'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Deloitte'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Solas Consulting Group'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.IndeedJobSearch.update({company:'Monsoon Consulting'},{$set: {Industry: 'Professional Services'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+>

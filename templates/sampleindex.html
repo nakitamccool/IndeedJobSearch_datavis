@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>DevJobs.ie</title>
+   <link rel="stylesheet" href="static/lib/css/introjs.css" />
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
+ </head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container-fluid">
+       <div class="navbar-header">
+           <a class="navbar-brand" href="./">Find me a job</a>
+           <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+               Show me how this works!
+           </button>
+       </div>
+   </div>
+</div>
+
+
+<div  id="outer" class="container-fluid">
+
+   <div class="row">
+
+       <div class="col-sm-8">
+           <div class="row">
+
+               <!-- funding Pie -->
+               <div class="col-lg-12">
+                   <div class="chart-wrapper">
+                       <div class="chart-title" data-step="3" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+                           Who is hiring?
+                       </div>
+                       <div class="chart-stage">
+                           <div id="funding-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- funding Pie -->
+
+               <!-- Time Chart - IN PROGRESS -->
+               <div class="col-sm-12">
+                   <div class="chart-wrapper">
+                       <div class="chart-title" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+                           How many new developer job posts are there?
+                       </div>
+                       <div class="chart-stage">
+                           <div id="time-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Time Chart -->
+
+               <!-- Resources -->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title" data-step="2" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+                           Resources
+                       </div>
+                       <div class="chart-stage">
+                           <div id="resource-type-row-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Resources -->
+
+           </div>
+       </div>
+
+       <!-- Poverty -->
+       <div class="col-sm-3">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Poverty Level
+               </div>
+               <div class="chart-stage">
+                   <div id="poverty-level-row-chart"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Poverty -->
+
+       <!-- Primary area of focus for funded projects -->
+       <div class="col-sm-12">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Primary area of focus for projects
+               </div>
+               <div class="chart-stage">
+                   <div id="primary-area-of-focus-row-chart"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Primary area of focus for funded projects -->
+
+
+
+       <!-- menu select -->
+       <div class="col-sm-6">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Donation State
+               </div>
+               <div class="chart-stage">
+                   <div id="menu-select"></div>
+               </div>
+           </div>
+       </div>
+       <!-- menu select -->
+
+       <!-- Metric 1 -->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of Donations
+               </div>
+               <div class="chart-stage" style=" background: #33CC99;
+                   position: relative;
+                   font-size: 29px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 1px;">
+                   <div id="number-projects-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 1 -->
+
+       <!-- Metric 2 -->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Donations in USD
+               </div>
+               <div class="chart-stage">
+                   <div id="total-donations-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 2 -->
+
+   </div>
+</div>
+
+<hr>
+<p class="small text-muted"> Data viz &#9829; from Code Institute<a></a></p>
+
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+<script src="static/lib/js/intro.js" type="text/javascript"></script>
+</body>
+</html>
