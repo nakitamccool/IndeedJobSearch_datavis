@@ -33,6 +33,11 @@ FIELDS = {'city': True,
           'CSS': True,
           'HTML': True,
           'NoSQL': True,
+          'Ruby': True,
+          'AWS': True,
+          'git': True,
+          'url': True,
+          'stations': True,
           '_id': False}
 
 

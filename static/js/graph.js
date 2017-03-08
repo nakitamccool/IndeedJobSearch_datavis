@@ -31,16 +31,18 @@ function makeGraphs(error, projectsJson) {
    var companyDim = ndx.dimension(function (d) {
        return d["company"];
    });
-   var jobtitleDim = ndx.dimension(function (d) {
-       return d["jobtitle"];
-   });
    var jobkeyDim = ndx.dimension(function (d) {
        return d["jobkey"];
    });
    var industryDim = ndx.dimension(function (d){
        return d["Industry"];
    });
-
+   var urlDim = ndx.dimension(function (d){
+      return d["url"];
+   });
+   var stationsDim = ndx.dimension(function (d){
+      return d["stations"];
+   });
    //Calculate metrics
    var numJobsbyDate = dateDim.group();
    var numJobsbyCity = cityDim.group();
@@ -48,7 +50,6 @@ function makeGraphs(error, projectsJson) {
    var numJobsbyLevel = levelDim.group();
    var numJobsbyCompany = companyDim.group();
    var numJobsbyIndustry = industryDim.group();
-   var numJobsbyJobKey = jobkeyDim.group();
 
    var all = ndx.groupAll();
    var totalJavaHits = ndx.groupAll().reduceSum(function (d) {
@@ -69,6 +70,9 @@ function makeGraphs(error, projectsJson) {
     var totalNetHits = ndx.groupAll().reduceSum(function (d) {
        return d["NET"];
    });
+    var totalAWSHits = ndx.groupAll().reduceSum(function (d){
+       return d["AWS"]
+    });
     var totalAngularHits = ndx.groupAll().reduceSum(function (d) {
        return d["Angular"];
    });
@@ -87,74 +91,104 @@ function makeGraphs(error, projectsJson) {
     var totalnoSQLHits = ndx.groupAll().reduceSum(function (d) {
        return d["NoSQL"];
    });
-  //  var tableGroup = jobkeyDim.group().reduce(
-  // function reduceAdd(p,v) {
-  //   p["city"] = v.city;
-  //   return p;
-  // },
-  //
-  // function reduceInitial() { return {}; }
-  // );
+    var totalRubyHits = ndx.groupAll().reduceSum(function (d) {
+       return d["Ruby"];
+   });
+    var totalGitHits = ndx.groupAll().reduceSum(function (d) {
+       return d["git"];
+   });
+    var totalJobPosts = ndx.groupAll().reduceCount(function (d){
+       return d["jobkey"];
+    });
 
    // //Define values (to be used in charts)
    var minDate = dateDim.bottom(1)[0]["date"];
    var maxDate = dateDim.top(1)[0]["date"];
 
    //Charts
-   var locationRowChart = dc.rowChart("#location-row-chart");
-   var rolePieChart = dc.pieChart("#role-pie-chart");
-   var levelPieChart = dc.pieChart("#level-pie-chart");
+   var locationPieChart = dc.pieChart("#location-pie-chart");
+   var levelBarChart = dc.barChart("#level-bar-chart");
+   var roleRowChart = dc.rowChart("#role-row-chart");
    var companyRow = dc.rowChart("#company-row-chart");
    var IndustryPieChart = dc.pieChart("#industry-pie-chart");
    var TimeChart = dc.lineChart("#Posts-row-chart");
-   // var Table = dc.dataTable("#results-table");
    var JavaHits = dc.numberDisplay("#java-hits");
    var phpHits = dc.numberDisplay("#php-hits");
    var JavaScriptHits = dc.numberDisplay("#javascript-hits");
    var sqlHits = dc.numberDisplay("#sql-hits");
    var pythonHits = dc.numberDisplay("#python-hits");
    var netHits = dc.numberDisplay("#net-hits");
+   var awsHits = dc.numberDisplay("#aws-hits");
    var angularHits = dc.numberDisplay("#angular-hits");
    var wordpressHits = dc.numberDisplay("#wordpress-hits");
    var cHits = dc.numberDisplay("#c-hits");
    var cssHits = dc.numberDisplay("#css-hits");
    var htmlHits = dc.numberDisplay("#html-hits");
    var nosqlHits = dc.numberDisplay("#nosql-hits");
+   var rubyHits = dc.numberDisplay("#ruby-hits");
+   var gitHits = dc.numberDisplay("#git-hits");
+   var jobHits = dc.numberDisplay("#total-hits");
+   var datatable = dc.dataTable("#results-table");
 
 
-    locationRowChart
-        .width(350)
-        .height(200)
-        .dimension(cityDim)
-        .group(numJobsbyCity)
-        .xAxis().ticks(5)
-   locationRowChart.ordering(function (d) { return -d.value});
-
-
-   rolePieChart
+   datatable
+   .dimension(jobkeyDim)
+   .group(function (d) {
+       return "<span id='LinkToFullResults'>This list shows the top 10 results only. Full list of jobs available "+"<a href='#Posts-row-chart'> here</a></span>";
+   })
+       .size(10)
+   // create the columns dynamically
+   .columns([
+       function (d) {return ""
+           +d.company
+           +" are looking for a "
+           +"<b>"
+           +d.jobtitle
+           +"."
+           +"</b>"
+           +"<br>"
+           +"<i>"+"<a href='"+d.url+"'>"+"Click here to view the full advert "+"</a>"
+           +"</i>";},
+   ])
+   ;
+    locationPieChart
        .height(200)
        .radius(100)
        .transitionDuration(1500)
-       .dimension(roleDim)
-       .group(numJobsbyRole);
+       .dimension(cityDim)
+       .group(numJobsbyCity);
 
-   levelPieChart
+
+    roleRowChart
+        .width(350)
+        .height(200)
+        .dimension(roleDim)
+        .group(numJobsbyRole)
+        .xAxis().ticks(5)
+   roleRowChart.ordering(function (d) { return -d.value});
+
+
+    levelBarChart
        .height(200)
-       .radius(100)
+       .width(300)
+       .x(d3.scale.ordinal())
+       .xUnits(dc.units.ordinal)
+       .brushOn(false)
        .transitionDuration(1500)
        .dimension(levelDim)
        .group(numJobsbyLevel);
 
-   IndustryPieChart
+    IndustryPieChart
        .height(200)
        .radius(100)
        .transitionDuration(1500)
        .dimension(industryDim)
        .group(numJobsbyIndustry);
 
+
    companyRow
        .width(350)
-       .height(400)
+       .height(360)
        .dimension(companyDim)
        .group(numJobsbyCompany)
        .xAxis().ticks(5)
@@ -162,19 +196,13 @@ function makeGraphs(error, projectsJson) {
    companyRow.rowsCap(10)
    companyRow.othersGrouper(false);
 
-   // Table
-   //     .width(1050)
-   //     .height(400)
-   //     .dimension(jobkeyDim)
-   //     .group(numJobsbyJobKey)
-   //     .columns([function(d){return d["city"]}]);
-
    TimeChart
        .width(1400)
        .height(200)
        .margins({top: 10, right: 50, bottom: 30, left: 50})
        .dimension(dateDim)
        .group(numJobsbyDate)
+       .renderArea(true)
        .transitionDuration(500)
        .x(d3.time.scale().domain([minDate, maxDate]))
        .xAxis().ticks(10);
@@ -221,6 +249,13 @@ function makeGraphs(error, projectsJson) {
        })
        .group(totalNetHits);
 
+    awsHits
+       .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(totalAWSHits);
+
     angularHits
        .formatNumber(d3.format("d"))
        .valueAccessor(function (d) {
@@ -263,6 +298,26 @@ function makeGraphs(error, projectsJson) {
        })
        .group(totalnoSQLHits);
 
+    rubyHits
+       .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(totalRubyHits);
+
+    gitHits
+        .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(totalGitHits);
+
+    jobHits
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function (d){
+            return d;
+        })
+        .group(totalJobPosts)
 
    dc.renderAll();
 }

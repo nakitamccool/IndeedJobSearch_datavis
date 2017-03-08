@@ -1,3 +1,18 @@
+#LinkToFullResults{
+    font-size: 12px;
+    color: #777777;
+    font-style: italic;
+    padding-bottom: 8px;
+}
+ul{
+    font-size: 14px;
+    list-style-type: none;
+    padding-left: 1px;
+}
+li {
+    padding-top: 4.4px;
+    padding-bottom: 4.4px;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -5,10 +20,8 @@ table {
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-    width: 8%;
+    text-align: left;
+    padding: 1px;
 }
 
 .dc-chart g.row text {
