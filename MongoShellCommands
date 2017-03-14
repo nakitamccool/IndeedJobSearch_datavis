@@ -9,7 +9,9 @@ db.IJS.update({sql: ''},{$set: {sql: 'false'}},{multi:true});
 Categories:
 JobCategory (Frontend, Backend, Full stack)
 Commands:
+db.IndeedJobSearch.update({level:'Intern/ Graduate'},{$set: {jobCategory: 'Full stack developer'}},{multi:true})ASSUMPTION
 db.IndeedJobSearch.update({Industry:''},{$set: {Industry: 'Tech, Media & Telecomms'}},{multi:true})
+db.IndeedJobSearch.update({jobCategory:'DevOps'},{$set: {jobCategory: 'DevOps engineer'}},{multi:true})
 db.IndeedJobSearch.update({$or: [{company:'Pramerica'}, {company: 'UnitedHealth Group']},{$set: {Industry: 'Healthcare'}},{multi:true})
 db.IndeedJobSearch.update({'jobtitle':{$regex: /sql/,$options:'<options>'}},{$set: {jobCategory: 'Backend Development'}},{multi:true})
 db.IndeedJobSearch.update({'jobtitle':{$regex: /python/,$options:'<options>'}},{$set: {jobCategory: 'Backend Development'}},{multi:true})
