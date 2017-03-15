@@ -1,3 +1,32 @@
+.keyline{
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: rgb(49, 130, 189);
+}
+
+.tagline{
+    font-weight: normal;
+    font-style: italic;
+    color: darkslategrey;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.intro_button{
+    position: fixed;
+    right: 2px;
+    top: 15px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(49, 130, 189);
+    border-style: none;
+    font-size: 12px;
+    width: 150px;
+}
+#container_fluid{
+    background-color: #4cae4c;
+    color: black;
+}
 #LinkToFullResults{
     font-size: 12px;
     color: #777777;

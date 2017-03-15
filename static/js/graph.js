@@ -129,12 +129,13 @@ function makeGraphs(error, projectsJson) {
    var gitHits = dc.numberDisplay("#git-hits");
    var jobHits = dc.numberDisplay("#total-hits");
    var datatable = dc.dataTable("#results-table");
+   var fullresults = dc.dataTable("#FullResultsTable");
 
 
    datatable
    .dimension(jobkeyDim)
    .group(function (d) {
-       return "<span id='LinkToFullResults'>This list shows the top 10 results only. Full list of jobs available "+"<a href='#Posts-row-chart'> here</a></span>";
+       return "<span id='LinkToFullResults'>This list shows the top 10 results only. Full list of jobs available "+"<a href='#FullResults'> here</a></span>";
    })
        .size(10)
    // create the columns dynamically
@@ -151,9 +152,33 @@ function makeGraphs(error, projectsJson) {
            +"</i>";},
    ])
    ;
+   fullresults
+   .dimension(jobkeyDim)
+   .group(function (d) {
+       return '';
+   })
+       .size(232)
+   // create the columns dynamically
+   .columns([
+       function (d) {return ''
+           +d.company
+           +' are looking for a '
+           +'<b>'
+           +d.jobtitle
+           +'.'
+           +'</b>'
+           +'<p>'
+           +'<a href="'
+           +d.url
+           +'"'
+           +'target=_blank>'
+           +'Click here to view the full advert '
+           +'</a></p>';}
+   ])
+   ;
     locationPieChart
-       .height(200)
-       .radius(100)
+       .height(190)
+       .radius(95)
        .transitionDuration(1500)
        .dimension(cityDim)
        .group(numJobsbyCity);
@@ -161,7 +186,7 @@ function makeGraphs(error, projectsJson) {
 
     roleRowChart
         .width(350)
-        .height(200)
+        .height(190)
         .dimension(roleDim)
         .group(numJobsbyRole)
         .xAxis().ticks(5)
@@ -169,7 +194,7 @@ function makeGraphs(error, projectsJson) {
 
 
     levelBarChart
-       .height(200)
+       .height(190)
        .width(300)
        .x(d3.scale.ordinal())
        .xUnits(dc.units.ordinal)
@@ -179,8 +204,8 @@ function makeGraphs(error, projectsJson) {
        .group(numJobsbyLevel);
 
     IndustryPieChart
-       .height(200)
-       .radius(100)
+       .height(190)
+       .radius(95)
        .transitionDuration(1500)
        .dimension(industryDim)
        .group(numJobsbyIndustry);

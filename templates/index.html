@@ -17,9 +17,9 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./">Click here to reset filters</a>
+            <a class="navbar-brand" href="./">Developer Job Search</a>
             <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();" data-step="1"
-                    data-intro="The description that you want" style="font-weight: normal" data-position="right">
+                    data-intro="Looking for a developer job? This dashboard is here to help. Click next to see how it works.." style="font-weight: normal" data-position="left">
                 Show me how this works!
             </button>
         </div>
@@ -34,9 +34,10 @@
             <!-- R1 -->
                 <!-- Location -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="2" data-intro="Use this chart to filter on jobs by your preferred location(s). This will automatically update the data in the following charts"
+                             style="font-weight: normal" data-position="right">
                         <div class="chart-title">
-                            <b>Where can I find a developer job?</b><br>
+                            <p class="keyline">Where can I find a developer job?</p>
                         </div>
                         <div class="chart-stage">
                             <div id="location-pie-chart"></div>
@@ -46,9 +47,14 @@
                 <!-- Location -->
                 <!-- Role -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="3" data-intro="Use this chart to filter on your preferred roles.
+                    In order to help you along, I've categorised the ads into 4 key roles (front end, back end, full stack
+                    and DevOps) based on the job title provided. Quite a few ads aren't so easily categorised from just a
+                    job title, so they sit in the 'Not specified' category - you'll be able to find out more from the links
+                    to the full job ad available in the results table"
+                             style="font-weight: normal" data-position="right">
                         <div class="chart-title">
-                            <b>What types of roles are on offer?</b>
+                            <p class="keyline">What types of roles are on offer?</p>
                         </div>
                         <div class="chart-stage">
                             <div id="role-row-chart"></div>
@@ -58,9 +64,12 @@
                 <!-- Role -->
                 <!-- Level -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by level of
+                    experience being sought. Again, I've categorised job ads based on their title and snippet entries -
+                    further details available in the full job post. "
+                             style="font-weight: normal" data-position="left">
                         <div class="chart-title">
-                            <b>What level of experience is being sought?</b>
+                            <p class="keyline">What level of experience is being sought?</p>
                         </div>
                         <div class="chart-stage">
                             <div id="level-bar-chart"></div>
@@ -70,9 +79,11 @@
                 <!-- Level -->
                 <!-- Industry -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="5" data-intro="Interested in exploring different industries
+                    employing developers? Use this chart to apply filters and see which employers from your preferred industry are hiring"
+                             style="font-weight: normal" data-position="left">
                         <div class="chart-title">
-                            <b>Which industries are hiring developers?</b>
+                            <p class="keyline">Which industries are hiring developers?</p>
                         </div>
                         <div class="chart-stage">
                             <div id="industry-pie-chart"></div>
@@ -86,19 +97,22 @@
 
                 <!-- Company row -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title" data-step="3" data-intro="The description that you want"
+                    <div class="chart-wrapper" data-step="6" data-intro="This chart identifies the top employers hiring developers
+                    (by no. of opportunities advertised). Click on any preferred employers to see their job adverts in the results table"
                              style="font-weight: normal" data-position="right">
-                            <b>Who is hiring developers?</b><br>
-                            <i>Top 10 companies based on no. of job posts</i>
+                        <div class="chart-title">
+                            <p class="keyline">Who is hiring developers?</p>
+                            <p class="tagline">Top 10 companies based on no. of job posts</p>
                         </div>
                         <div class="chart-stage">
                             <div id="company-row-chart"></div>
                         </div>
                     </div>
-                    <div class="chart-wrapper">
-                        <div class="chart-title" data-step="3" data-intro="The description that you want" style="font-weight: normal" data-position="right">
-                            <b>Number of job posts matching your search</b><br>
+                    <div class="chart-wrapper" data-step="7" data-intro="This helpful counter lets you know how many job
+                     adverts match your search based on the filters you've applied. Note that this will automatically update if you change any of your filters."
+                             style="font-weight: normal" data-position="top">
+                        <div class="chart-title">
+                            <p class="keyline">Number of job posts matching your search</p>
                         </div>
                         <div class="chart-stage">
                             <div id="total-hits"></div>
@@ -108,11 +122,12 @@
                 <!-- Company row -->
                 <!-- Results table -->
                 <div class="col-sm-6">
-                    <div class="chart-wrapper">
-                        <div class="chart-title" data-step="3" data-intro="The description that you want"
-                             style="font-weight: normal" data-position="right">
-                            <b>My results</b><br>
-                            <i>Job posts matching your location, role, level, industry and company filters</i>
+                    <div class="chart-wrapper" data-step="8" data-intro="This table displays your results based on the filters,
+                     use the links provided to find out more about any jobs that peak your interest!"
+                             style="font-weight: normal" data-position="top">
+                        <div class="chart-title">
+                            <p class="keyline">My results</p>
+                            <p class="tagline">Job posts matching your location, role, level, industry and company filters</p>
                         </div>
                         <div class="chart-stage">
                             <div id="results-table">
@@ -125,11 +140,12 @@
                 <!--Results table-->
                 <!-- Keyword hits -->
                 <div class="col-sm-3">
-                    <div class="chart-wrapper">
-                        <div class="chart-title" data-step="3" data-intro="The description that you want"
-                             style="font-weight: normal" data-position="right">
-                            <b>Keyword hits</b><br>
-                            <i>xyz</i>
+                    <div class="chart-wrapper" data-step="9" data-intro="This summary table lists the number of times a
+                    keyword (be that a language, framework, tool etc.) has been found in an ad in your results table."
+                             style="font-weight: normal" data-position="left">
+                        <div class="chart-title">
+                            <p class="keyline">Keyword hits</p>
+                            <p class="tagline">Popular languages, tools and frameworks</p>
                         </div>
                         <div class="chart-stage">
                             <ul>
@@ -158,14 +174,16 @@
             </div>
             <!-- EOR2 -->
 
-            <!-- R1 -->
-                <div class="row">
+            <!-- R4 -->
 
                     <!-- Time -->
                     <div class="col-sm-12">
-                        <div class="chart-wrapper">
+                        <div class="chart-wrapper" data-step="10" data-intro="You can use the employer filter to help you spot any trends and predict when new ads may be posted."
+                             style="font-weight: normal" data-position="top">
                             <div class="chart-title">
-                                How many new jobs are being posted per day?
+                                <p class ="keyline">Can't find what you're looking for?</p>
+                                <p class="tagline">Not to worry, check out how many new jobs are being posted every day! Try filtering by your preferred employer to see if you
+                                can spot any trends - this may help you predict when new posts will be advertised</p>
                             </div>
                             <div class="chart-stage">
                                 <div id="Posts-row-chart"></div>
@@ -174,7 +192,24 @@
                     </div>
                     <!-- Time -->
 
-                </div>
+                <!-- END OF ROW 4 -->
+                        <!-- R4 -->
+
+                    <!-- Time -->
+                    <div class="col-sm-12" id="FullResults">
+                        <div class="chart-wrapper">
+                            <div class="chart-title">
+                            <p class="keyline">Full list of results</p>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="FullResultsTable">
+                                <div class='header'>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Time -->
                 <!-- END OF ROW 4 -->
 
             </div>
