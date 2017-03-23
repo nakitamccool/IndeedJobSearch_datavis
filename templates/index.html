@@ -10,225 +10,234 @@
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css') }}">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body class="application">
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="./">Developer Job Search</a>
-            <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();" data-step="1"
-                    data-intro="Looking for a developer job? This dashboard is here to help. Click next to see how it works.." style="font-weight: normal" data-position="left">
-                Show me how this works!
-            </button>
-        </div>
-    </div>
+   <div class="container-fluid">
+       <div class="navbar-header col-sm-12">
+           <a class="navbar-brand title col-sm-4" href="./">Developer Job Search</a>
+           <ul class="nav nav-pills pull-right">
+               <li class="nav-item-pill col-sm-4"><a class="nav-item-pill-name" autofocus onclick="javascript:introJs().start();"
+                    data-step="1"
+                    data-intro="Looking for a developer job? This dashboard is here to help. Click next to see how it works.."
+                    style="font-weight: normal" data-position="left"><i id="fa-question" class="fa fa-question"></i> How does this work?</a></li>
+               <li class="nav-item-pill col-sm-4"><a class="nav-item-pill-name" href="./"><i id="fa-refresh" class="fa fa-refresh"></i> Reset all filters</a></li>
+            </ul>
+       </div>
+   </div>
 </div>
-
 
 <div id="outer" class="container-fluid">
 
     <div class="col-sm-12">
         <div class="row">
             <!-- R1 -->
-                <!-- Location -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="2" data-intro="Use this chart to filter on jobs by your preferred location(s). This will automatically update the data in the following charts"
-                             style="font-weight: normal" data-position="right">
-                        <div class="chart-title">
-                            <p class="keyline">Where can I find a developer job?</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="location-pie-chart"></div>
-                        </div>
+            <!-- Location -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="2"
+                     data-intro="Use this chart to filter on jobs by your preferred location(s). This will automatically update the data in the following charts"
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline">Where can I find a developer job?</p>
+                    </div>
+                    <div class="chart-stage locpiechart">
+                        <div id="location-pie-chart"></div>
                     </div>
                 </div>
-                <!-- Location -->
-                <!-- Role -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="3" data-intro="Use this chart to filter on your preferred roles.
+            </div>
+            <!-- Location -->
+            <!-- Role -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="3" data-intro="Use this chart to filter on your preferred roles.
                     In order to help you along, I've categorised the ads into 4 key roles (front end, back end, full stack
                     and DevOps) based on the job title provided. Quite a few ads aren't so easily categorised from just a
                     job title, so they sit in the 'Not specified' category - you'll be able to find out more from the links
                     to the full job ad available in the results table"
-                             style="font-weight: normal" data-position="right">
-                        <div class="chart-title">
-                            <p class="keyline">What types of roles are on offer?</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="role-row-chart"></div>
-                        </div>
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline">What types of roles are on offer?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="role-row-chart"></div>
                     </div>
                 </div>
-                <!-- Role -->
-                <!-- Level -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by level of
+            </div>
+            <!-- Role -->
+            <!-- Level -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by level of
                     experience being sought. Again, I've categorised job ads based on their title and snippet entries -
                     further details available in the full job post. "
-                             style="font-weight: normal" data-position="left">
-                        <div class="chart-title">
-                            <p class="keyline">What level of experience is being sought?</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="level-bar-chart"></div>
-                        </div>
+                     style="font-weight: normal" data-position="left">
+                    <div class="chart-title">
+                        <p class="keyline">What level of experience is being sought?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="level-bar-chart"></div>
                     </div>
                 </div>
-                <!-- Level -->
-                <!-- Industry -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="5" data-intro="Interested in exploring different industries
+            </div>
+            <!-- Level -->
+            <!-- Industry -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="5" data-intro="Interested in exploring different industries
                     employing developers? Use this chart to apply filters and see which employers from your preferred industry are hiring"
-                             style="font-weight: normal" data-position="left">
-                        <div class="chart-title">
-                            <p class="keyline">Which industries are hiring developers?</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="industry-pie-chart"></div>
-                        </div>
+                     style="font-weight: normal" data-position="left">
+                    <div class="chart-title">
+                        <p class="keyline">Which industries are hiring developers?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="industry-row-chart"></div>
                     </div>
                 </div>
-                <!-- Industry -->
+            </div>
+            <!-- Industry -->
             <!-- EOR1 -->
 
             <!-- R2 -->
 
-                <!-- Company row -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="6" data-intro="This chart identifies the top employers hiring developers
+            <!-- Company row -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="6" data-intro="This chart identifies the top employers hiring developers
                     (by no. of opportunities advertised). Click on any preferred employers to see their job adverts in the results table"
-                             style="font-weight: normal" data-position="right">
-                        <div class="chart-title">
-                            <p class="keyline">Who is hiring developers?</p>
-                            <p class="tagline">Top 10 companies based on no. of job posts</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="company-row-chart"></div>
-                        </div>
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline">Who is hiring developers?</p>
+                        <p class="tagline">Top 10 companies based on no. of job posts</p>
                     </div>
-                    <div class="chart-wrapper" data-step="7" data-intro="This helpful counter lets you know how many job
+                    <div class="chart-stage">
+                        <div id="company-row-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Company row -->
+            <!-- Results table -->
+            <div class="col-sm-6">
+                <div class="chart-wrapper" data-step="7" data-intro="This helpful counter lets you know how many job
                      adverts match your search based on the filters you've applied. Note that this will automatically update if you change any of your filters."
-                             style="font-weight: normal" data-position="top">
-                        <div class="chart-title">
-                            <p class="keyline">Number of job posts matching your search</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="total-hits"></div>
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <div id = "resultslog">
+                            <p class="keyline"><span id="total-hits"></span> job posts match your search</p>
+                            <p class="tagline">Check out your first 5 results in the table below or click <a href="#FullResults">
+                            here </a> to view all <span id="total-hits"></span> posts.</p>
                         </div>
                     </div>
                 </div>
-                <!-- Company row -->
-                <!-- Results table -->
-                <div class="col-sm-6">
-                    <div class="chart-wrapper" data-step="8" data-intro="This table displays your results based on the filters,
+                <div class="chart-wrapper" data-step="8" data-intro="This table displays your results based on the filters,
                      use the links provided to find out more about any jobs that peak your interest!"
-                             style="font-weight: normal" data-position="top">
-                        <div class="chart-title">
-                            <p class="keyline">My results</p>
-                            <p class="tagline">Job posts matching your location, role, level, industry and company filters</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="results-table">
-                                <div class='header'>
-                                </div>
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <p class="keyline">My results</p>
+                        <p class="tagline">The table below shows a summary of your first 5 results.</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="results-table">
+                            <div class='header'>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Results table-->
-                <!-- Keyword hits -->
-                <div class="col-sm-3">
-                    <div class="chart-wrapper" data-step="9" data-intro="This summary table lists the number of times a
+
+            </div>
+            <!--Results table-->
+            <!-- Keyword hits -->
+            <div class="col-sm-3">
+                <div class="chart-wrapper" data-step="9" data-intro="This summary table lists the number of times a
                     keyword (be that a language, framework, tool etc.) has been found in an ad in your results table."
-                             style="font-weight: normal" data-position="left">
-                        <div class="chart-title">
-                            <p class="keyline">Keyword hits</p>
-                            <p class="tagline">Popular languages, tools and frameworks</p>
-                        </div>
-                        <div class="chart-stage">
-                            <ul>
-                                <li><i class="devicon-java-plain"></i> Java: <b id="java-hits"></b></li>
-                                <li><i class="devicon-php-plain"></i> PHP: <b id="php-hits"></b></li>
-                                <li><i class="devicon-javascript-plain"></i> JavaScript: <b id="javascript-hits"></b></li>
-                                <li><i class="devicon-mysql-plain"></i> SQL: <b id="sql-hits"></b></li>
-                                <li><i class="devicon-python-plain"></i> Python: <b id="python-hits"></b></li>
-                                <li><i class="devicon-dot-net-plain"></i> .NET: <b id="net-hits"></b></li>
-                                <li><i class="devicon-amazonwebservices-plain"></i> AWS: <b id="aws-hits"></b></li>
-                                <li><i class="devicon-angularjs-plain"></i> Angular: <b id="angular-hits"></b></li>
-                                <li><i class="devicon-wordpress-plain"></i> WordPress: <b id="wordpress-hits"></b></li>
-                                <li><i class="devicon-csharp-plain"></i> C#: <b id="c-hits"></b></li>
-                                <li><i class="devicon-css3-plain"></i> CSS: <b id="css-hits"></b></li>
-                                <li><i class="devicon-html5-plain"></i> HTML: <b id="html-hits"></b></li>
-                                <li><i class="devicon-mongodb-plain"></i> MongoDB/ NoSQL: <b id="nosql-hits"></b></li>
-                                <li><i class="devicon-ruby-plain"></i> Ruby: <b id="ruby-hits"></b></li>
-                                <li><i class="devicon-git-plain"></i> Git: <b id="git-hits"></b></li>
-
-                            </ul>
-                        </div>
-
+                     style="font-weight: normal" data-position="left">
+                    <div class="chart-title">
+                        <p class="keyline">Keyword hits</p>
+                        <p class="tagline">Popular languages, tools and frameworks</p>
+                    </div>
+                    <div class="chart-stage">
+                        <ul>
+                            <li><i class="devicon-java-plain"></i> Java: <span class="hit" id="java-hits"></span></li>
+                            <li><i class="devicon-php-plain"></i> PHP: <span class='hit' id="php-hits"></span></li>
+                            <li><i class="devicon-javascript-plain"></i> JavaScript: <span class='hit'
+                                                                                           id="javascript-hits"></span>
+                            </li>
+                            <li><i class="devicon-mysql-plain"></i> SQL: <span class='hit' id="sql-hits"></span></li>
+                            <li><i class="devicon-python-plain"></i> Python: <span class='hit' id="python-hits"></span>
+                            </li>
+                            <li><i class="devicon-dot-net-plain"></i> .NET: <span class='hit' id="net-hits"></span></li>
+                            <li><i class="devicon-amazonwebservices-plain"></i> AWS: <span class='hit'
+                                                                                           id="aws-hits"></span></li>
+                            <li><i class="devicon-angularjs-plain"></i> Angular: <span class='hit'
+                                                                                       id="angular-hits"></span></li>
+                            <li><i class="devicon-wordpress-plain"></i> WordPress: <span class='hit'
+                                                                                         id="wordpress-hits"></span>
+                            </li>
+                            <li><i class="devicon-csharp-plain"></i> C#: <span class='hit' id="c-hits"></span></li>
+                            <li><i class="devicon-css3-plain"></i> CSS: <span class='hit' id="css-hits"></span></li>
+                            <li><i class="devicon-html5-plain"></i> HTML: <span class='hit' id="html-hits"></span></li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Keyword hits
             </div>
-            <!-- EOR2 -->
+            <!-- Keyword hits
+        </div>
+        <!-- EOR2 -->
 
             <!-- R4 -->
 
-                    <!-- Time -->
-                    <div class="col-sm-12" id="FullResults">
-                        <div class="chart-wrapper" data-step="10" data-intro="You can use the employer filter to help you spot any trends and predict when new ads may be posted."
-                             style="font-weight: normal" data-position="top">
-                            <div class="chart-title">
-                                <p class ="keyline">Can't find what you're looking for?</p>
-                                <p class="tagline">Not to worry, check out how many new jobs are being posted every day! Try filtering by your preferred employer to see if you
-                                can spot any trends - this may help you predict when new posts will be advertised</p>
-                            </div>
-                            <div class="chart-stage">
-                                <div id="Posts-row-chart"></div>
-                            </div>
-                        </div>
+            <!-- Time -->
+            <div class="col-sm-12" id="FullResults">
+                <div class="chart-wrapper" data-step="10"
+                     data-intro="You can use the employer filter to help you spot any trends and predict when new ads may be posted."
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <p class="keyline">Can't find what you're looking for?</p>
+                        <p class="tagline">Not to worry, check out how many new jobs are being posted every day! Try
+                            filtering by your preferred employer to see if you
+                            can spot any trends - this may help you predict when new posts will be advertised</p>
                     </div>
-                    <!-- Time -->
-
-                <!-- END OF ROW 4 -->
-                        <!-- R4 -->
-
-                    <!-- Time -->
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                            <p class="keyline">Full list of results</p>
-                        </div>
-                        <div class="chart-stage">
-                            <div id="FullResultsTable">
-                                <div class='header'>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
+                    <div class="chart-stage">
+                        <div id="Posts-row-chart"></div>
                     </div>
-                    <!-- Time -->
-                <!-- END OF ROW 4 -->
-
+                </div>
             </div>
+            <!-- Time -->
+
+            <!-- END OF ROW 4 -->
+            <!-- R4 -->
+
+            <!-- Time -->
+            <div class="col-sm-12">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <p class="keyline">Full list of results</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="FullResultsTable">
+                            <div class='header'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Time -->
+            <!-- END OF ROW 4 -->
+
         </div>
     </div>
-
-    <hr>
-    <p class="small text-muted"> Data viz &#9829; from Code Institute<a></a></p>
-
-    <script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
-    <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
-    <script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
-    <script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
-    <script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
-
-    <script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
-    <script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
-    <script src="static/lib/js/intro.js" type="text/javascript"></script>
 </div>
+
+<hr>
+<p class="small text-muted"> Data viz &#9829; from Code Institute<a></a></p>
+
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
+<script src="static/lib/js/intro.js" type="text/javascript"></script>
 </body>
 </html>

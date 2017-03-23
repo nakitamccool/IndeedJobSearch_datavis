@@ -1,7 +1,28 @@
+#location-pie-chart{
+    padding-top:10px;
+}
+.nav-item-pill{
+    width: 200px;
+    float: right;
+    color: white;
+    padding-top: 5px;
+}
+
+.nav-item-pill-name{
+    color: white;
+    text-align: left;
+    font-size: 12px;
+}
+.fa-refresh .fa-search{
+    color: white;
+}
 .keyline{
     font-weight: bold;
     margin-bottom: 0px;
     color: rgb(49, 130, 189);
+}
+.locpiechart{
+    height: 205px;
 }
 
 .tagline{
@@ -11,18 +32,16 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.intro_button{
-    position: fixed;
-    right: 2px;
-    top: 15px;
-    font-style: italic;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(49, 130, 189);
-    border-style: none;
-    font-size: 12px;
-    width: 150px;
+
+#reset_link{
+    text-decoration: none;
+    color: #777;
 }
+button.navbar-text.navbar-right{
+    width: 250px;
+}
+
+
 #container_fluid{
     background-color: #4cae4c;
     color: black;
@@ -33,14 +52,25 @@
     font-style: italic;
     padding-bottom: 8px;
 }
+.hits{
+    display: inline-block;
+}
 ul{
     font-size: 14px;
     list-style-type: none;
-    padding-left: 1px;
+    padding-left: 4px;
 }
 li {
-    padding-top: 4.4px;
-    padding-bottom: 4.4px;
+    padding-top: 3.4px;
+    padding-bottom: 3px;
+}
+.hit{
+    float: right;
+    padding-right: 4px;
+    font-weight: bold;
+}
+i{
+    padding-right: 10px;
 }
 table {
     font-family: arial, sans-serif;
