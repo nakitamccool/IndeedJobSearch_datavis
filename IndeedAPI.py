@@ -9,17 +9,16 @@ app = Flask(__name__)
 #*** Configure to run locally ***#
 MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
-# DBS_NAME = 'eIndeedJobSearch'
-# COLLECTION_NAME = 'eIJS'
+DBS_NAME = 'IndeedJobSearch'
+COLLECTION_NAME = 'IJS'
 #*** END: Configure to run locally ***#
 
-#* Congfigure to run on heroku *#
-MONGODB_URI = os.getenv('MONGODB_URI')
-DBS_NAME = os.getenv('MONGO_DB_NAME','eIndeedJobSearch')
-COLLECTION_NAME = os.getenv('MONGO_COLLECTION_NAME','eIJS')
-#* END Congfigure to run on heroku *#
-DBS_NAME = 'eIndeedJobSearch'
-COLLECTION_NAME = 'eIJS'
+# # #* Congfigure to run on heroku *#
+# MONGODB_URI = os.getenv('MONGODB_URI')
+# DBS_NAME = os.getenv('MONGO_DB_NAME','eIndeedJobSearch')
+# COLLECTION_NAME = os.getenv('MONGO_COLLECTION_NAME','eIJS')
+# #* END Congfigure to run on heroku *#
+
 FIELDS = {'city': True,
           'jobCategory': True,
           'level': True,
@@ -56,13 +55,14 @@ def index():
 
 @app.route("/eIndeedJobSearch/eIJS")
 def donor_projects():
-    # *** Configure to run locally *** #
+    # # *** Configure to run locally *** #
     connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
     # *** END: Configure to run locally ***#
 
     # * Congfigure to run on heroku *#
     # connection = MongoClient(MONGODB_URI)
     # * END Congfigure to run on heroku *#
+
     collection = connection[DBS_NAME][COLLECTION_NAME]
     projects = collection.find(projection=FIELDS, limit=55000)
     json_projects = []
