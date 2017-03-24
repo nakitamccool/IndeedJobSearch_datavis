@@ -97,7 +97,7 @@ function makeGraphs(error, projectsJson) {
     var roleRowChart = dc.rowChart("#role-row-chart");
     var companyRow = dc.rowChart("#company-row-chart");
     var IndustryRowChart = dc.rowChart("#industry-row-chart");
-    var TimeChart = dc.lineChart("#Posts-row-chart");
+    var timeChart = dc.lineChart("#time-line-chart");
     var JavaHits = dc.numberDisplay("#java-hits");
     var phpHits = dc.numberDisplay("#php-hits");
     var JavaScriptHits = dc.numberDisplay("#javascript-hits");
@@ -222,7 +222,7 @@ function makeGraphs(error, projectsJson) {
     companyRow.rowsCap(10)
     companyRow.othersGrouper(false);
 
-    TimeChart
+    timeChart
         .width(1000)
         .height(200)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
@@ -230,8 +230,9 @@ function makeGraphs(error, projectsJson) {
         .group(numJobsbyDate)
         .renderArea(true)
         .transitionDuration(500)
-        .x(d3.time.scale().domain([minDate, maxDate]))
-        .xAxis().ticks(10);
+        .x(d3.scale.ordinal().domain([(minDate), (maxDate)]))
+        .xUnits(dc.units.ordinal)
+        .xAxis().ticks();
 
     JavaHits
         .formatNumber(d3.format("d"))
