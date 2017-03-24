@@ -223,7 +223,7 @@ function makeGraphs(error, projectsJson) {
     companyRow.othersGrouper(false);
 
     TimeChart
-        .width(1600)
+        .width(1000)
         .height(200)
         .margins({top: 10, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
