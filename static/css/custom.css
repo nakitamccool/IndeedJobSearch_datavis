@@ -11,9 +11,9 @@ body.application {
 }
 
 /*Navbar*/
-.navbar-inverse {3
-    background-color: #2164f3; ;
-    border-color: #2164f3;;
+.navbar-inverse {
+    background-color: #2164f3;
+    border-color: #2164f3;
 }
 
 a.nav-item-pill-name.introjs-showElement{

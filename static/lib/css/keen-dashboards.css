@@ -44,7 +44,7 @@ body.application hr {
   margin-bottom: 10px;
 }
 .chart-wrapper .chart-title {
-  border-bottom: 1px solid rgb(49, 130, 189);
+  border-bottom: 1px solid #e5f2ff;
   color: darkgrey;
   font-size: 14px;
   font-weight: 200;
