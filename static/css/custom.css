@@ -40,6 +40,11 @@ a{
     color: #7977cc;
 }
 
+a:hover{
+    text-decoration: none;
+    color: #ff6600;
+}
+
 /* Changed row text to black so it is visible against background*/
 .dc-chart g.row text {
     fill: black;
