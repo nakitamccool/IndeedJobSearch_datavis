@@ -47,6 +47,10 @@ a{
     color: black;
 }
 
+.chart-wrapper{
+    box-shadow: 1px 2px 2px #e2e2e2;
+}
+
 .chart-title {
     border-bottom: 1px solid #e5f2ff;
 }
