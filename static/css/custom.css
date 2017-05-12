@@ -43,8 +43,8 @@ a{
 }
 
 /* Changed row text to black so it is visible against background*/
-.dc-chart g.row text{
-    color: black;
+.dc-chart g.row text {
+    fill: black;
 }
 
 .chart-wrapper{
