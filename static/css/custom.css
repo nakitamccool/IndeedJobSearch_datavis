@@ -1,3 +1,37 @@
+/*Color scheme (in line with Indeed branding):
+Primary color - royal blue: #2164f3
+Secondary color - alice blue: #e5f2ff
+Contrast color - orangered: #ff6600
+Background color - whitesmoke: #f5f6f7*/
+
+/*Navbar*/
+.navbar-inverse {
+    background-color: #2164f3; ;
+    border-color: #2164f3;;
+}
+
+a.nav-item-pill-name.introjs-showElement{
+    background-color: #e5f2ff;
+    color: #2164f3;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #e5f2ff;
+    color: #2164f3;
+}
+
+/*Tooltips*/
+.introjs-helperNumberLayer {
+  background: #ff6600; /* Old browsers */
+  background: -webkit-linear-gradient(top, #ff6600 0%, #E95300 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6600), color-stop(100%, #E95300)); /* Chrome,Safari4+ */
+  background:    -moz-linear-gradient(top, #ff6600 0%, #E95300 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(top, #ff6600 0%, #E95300 100%); /* IE10+ */
+  background:      -o-linear-gradient(top, #ff6600 0%, #E95300 100%); /* Opera 11.10+ */
+  background:         linear-gradient(to bottom, #ff6600 0%, #E95300 100%);  /* W3C */
+}
+
+
 #location-pie-chart{
     padding-top:10px;
 }
