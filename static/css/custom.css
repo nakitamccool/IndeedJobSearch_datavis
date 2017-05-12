@@ -17,12 +17,12 @@ body.application {
 }
 
 a.nav-item-pill-name.introjs-showElement{
-    background-color: #7977cc;
+    background-color: #ff6600;
     color: #2164f3;
 }
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
-    background-color: #7977cc;
+    background-color: #ff6600;
     color: #2164f3;
 }
 
