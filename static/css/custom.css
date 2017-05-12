@@ -19,7 +19,7 @@
 .keyline{
     font-weight: bold;
     margin-bottom: 0px;
-    color: rgb(49, 130, 189);
+    color: #2164f3;
 }
 .locpiechart{
     height: 205px;
@@ -83,49 +83,3 @@ td, th {
     padding: 1px;
 }
 
-.dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
-}
-
-#total-projects {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-
-
-.dc-select-menu {
-   background: #33CC99;
-   width: 80%;
-   border: none;
-   position: relative;
-   height: 31px;
-   font-size: 15px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
-
-}
