@@ -2,21 +2,27 @@
 Primary color - royal blue: #2164f3
 Secondary color - alice blue: #e5f2ff
 Contrast color - orangered: #ff6600
-Background color - whitesmoke: #f5f6f7*/
+Background color - whitesmoke: #f5f6f7
+Links  mediumpurple: #7977cc*/
+
+body.application {
+    background: #f5f6f7;
+    padding: 60px 20px 0;
+}
 
 /*Navbar*/
-.navbar-inverse {
+.navbar-inverse {3
     background-color: #2164f3; ;
     border-color: #2164f3;;
 }
 
 a.nav-item-pill-name.introjs-showElement{
-    background-color: #e5f2ff;
+    background-color: #7977cc;
     color: #2164f3;
 }
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
-    background-color: #e5f2ff;
+    background-color: #7977cc;
     color: #2164f3;
 }
 
@@ -31,6 +37,14 @@ a.nav-item-pill-name.introjs-showElement{
   background:         linear-gradient(to bottom, #ff6600 0%, #E95300 100%);  /* W3C */
 }
 
+/* Links */
+a{
+    color: #7977cc;
+}
+
+.chart-title {
+    border-bottom: 1px solid #e5f2ff;
+}
 
 #location-pie-chart{
     padding-top:10px;
@@ -62,7 +76,7 @@ a.nav-item-pill-name.introjs-showElement{
 .tagline{
     font-weight: normal;
     font-style: italic;
-    color: darkslategrey;
+    color: black;
     margin-top: 0px;
     margin-bottom: 0px;
 }
