@@ -1,20 +1,21 @@
 /*Color scheme (in line with Indeed branding):
 Primary color - royal blue: #2164f3
 Secondary color - alice blue: #e5f2ff
-Primary contrast color - orangered: #ff6600
+Primary contrast color - orangered: orangered
 Secondary contrast color - orange: ##ffa500
 Background color - whitesmoke: #f5f6f7
 Links on white background  mediumpurple: #7977cc*/
 
+/*Background*/
 body.application {
     background: #f5f6f7;
-    padding: 60px 20px 0;
+    padding: 60px 20px;
 }
 
 /*Navbar*/
 #mainNav {
-    background-color: #2164f3;
-    border-color: #2164f3;
+    background-color: royalblue;
+    border-color: royalblue;
     color: white;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -23,6 +24,11 @@ body.application {
 i.fa.fa-bars {
     padding: 0px;
 }
+
+.fa-refresh .fa-search{
+    color: white;
+}
+
 a.navbar-brand{
     color: white;
     padding-top: 22px;
@@ -45,7 +51,7 @@ a.navbar-brand{
 }
 
 a.nav-item-pill-name.introjs-showElement{
-    color: #ff6600;
+    color: orangered;
 }
 
 .nav-item-pill{
@@ -64,64 +70,47 @@ a.nav-item-pill-name.introjs-showElement{
 ul.nav.navbar-nav.navbar-right {
     margin-right: 10px;
 }
-.nav>li>a {
-    padding: 1px;
-}
 
-.nav>li>a:hover, .nav>li>a:focus {
-    text-decoration: none;
-    color: #ff6600;
-    background-color: whitesmoke;
-}
 
 /*Tooltips*/
 .introjs-helperNumberLayer {
-  background: #ff6600; /* Old browsers */
-  background: -webkit-linear-gradient(top, #ff6600 0%, #E95300 100%); /* Chrome10+,Safari5.1+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6600), color-stop(100%, #E95300)); /* Chrome,Safari4+ */
-  background:    -moz-linear-gradient(top, #ff6600 0%, #E95300 100%); /* FF3.6+ */
-  background:     -ms-linear-gradient(top, #ff6600 0%, #E95300 100%); /* IE10+ */
-  background:      -o-linear-gradient(top, #ff6600 0%, #E95300 100%); /* Opera 11.10+ */
-  background:         linear-gradient(to bottom, #ff6600 0%, #E95300 100%);  /* W3C */
+  background: orangered; /* Old browsers */
+  background: -webkit-linear-gradient(top, orangered 0%, #E95300 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, orangered), color-stop(100%, #E95300)); /* Chrome,Safari4+ */
+  background:    -moz-linear-gradient(top, orangered 0%, #E95300 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(top, orangered 0%, #E95300 100%); /* IE10+ */
+  background:      -o-linear-gradient(top, orangered 0%, #E95300 100%); /* Opera 11.10+ */
+  background:         linear-gradient(to bottom, orangered 0%, #E95300 100%);  /* W3C */
 }
 
 /* Links */
 a{
-    color: #7977cc;
+    color: mediumpurple;
 }
 
 a:hover{
     text-decoration: none;
-    color: #ff6600;
+    color: orange;
 }
 
-/* Changed row text to black so it is visible against background*/
+/* Changing row text to black so it is visible against background*/
 .dc-chart g.row text {
     fill: black;
 }
 
+/*chart styling*/
 .chart-wrapper{
     box-shadow: 1px 2px 2px #e2e2e2;
 }
 
 .chart-title {
-    border-bottom: 1px solid #e5f2ff;
+    border-bottom: 1px solid aliceblue;
 }
 
-#location-pie-chart{
-    padding-top:10px;
-}
-
-.fa-refresh .fa-search{
-    color: white;
-}
 .keyline{
     font-weight: bold;
     margin-bottom: 0px;
-    color: #2164f3;
-}
-.locpiechart{
-    height: 205px;
+    color: royalblue;
 }
 
 .tagline{
@@ -132,20 +121,16 @@ a:hover{
     margin-bottom: 0px;
 }
 
-#LinkToFullResults{
-    font-size: 12px;
-    color: #777777;
-    font-style: italic;
-    padding-bottom: 8px;
+i{
+    padding-right: 8px;
 }
-.hits{
-    display: inline-block;
-}
+
 ul{
     font-size: 14px;
     list-style-type: none;
     padding-left: 4px;
 }
+
 li {
     padding-top: 3.4px;
     padding-bottom: 3px;
@@ -155,9 +140,17 @@ li {
     padding-right: 4px;
     font-weight: bold;
 }
-i{
-    padding-right: 8px;
+
+/*pie chart styling*/
+#location-pie-chart{
+    padding-top:10px;
 }
+
+.locpiechart{
+    height: 205px;
+}
+
+/* Results tables */
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
