@@ -44,10 +44,6 @@ a.nav-item-pill-name.introjs-showElement{
     background-color: whitesmoke;
 }
 
-.nav>li>a {
-    padding: 2px 4px;
-}
-
 /*Tooltips*/
 .introjs-helperNumberLayer {
   background: #ff6600; /* Old browsers */
