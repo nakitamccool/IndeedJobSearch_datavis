@@ -9,11 +9,12 @@ Links on white background  mediumpurple: #7977cc*/
 /*Background*/
 body.application {
     background: #f5f6f7;
-    padding: 60px 20px;
+    padding: 85px 20px;
 }
 
 /*Navbar*/
-#mainNav {
+nav#mainNav {
+    padding-top: 20px;
     background-color: royalblue;
     border-color: royalblue;
     color: white;
@@ -31,8 +32,8 @@ i.fa.fa-bars {
 
 a.navbar-brand{
     color: white;
-    padding-top: 22px;
     margin-left: 10px;
+    padding-top: 18px;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
     color: orange;
@@ -57,7 +58,6 @@ a.nav-item-pill-name.introjs-showElement{
 .nav-item-pill{
     float: right;
     color: white;
-    padding-top: 22px;
 }
 
 .nav-item-pill-name{
@@ -126,7 +126,6 @@ i{
 }
 
 ul{
-    font-size: 14px;
     list-style-type: none;
     padding-left: 4px;
 }
