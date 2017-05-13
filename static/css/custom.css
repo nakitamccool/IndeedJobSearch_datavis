@@ -19,9 +19,18 @@ body.application {
 a.nav-item-pill-name.introjs-showElement{
     color: #ff6600;
 }
+.nav>li>a {
+    padding: 2px 4px;
+}
+
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
     color: #ff6600;
+    background-color: transparent;
+}
+
+.nav>li>a {
+    padding: 2px 4px;
 }
 
 /*Tooltips*/
