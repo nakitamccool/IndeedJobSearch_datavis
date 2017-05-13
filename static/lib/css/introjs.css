@@ -59,7 +59,7 @@ tr.introjs-showElement > th {
   /*border: 1px solid #777;*/
   /*border: 1px solid rgba(0,0,0,.5);*/
   border-radius: 4px;
-  box-shadow: 1px 1px 5px #e2e2e2;
+  /*box-shadow: 1px 1px 5px #e2e2e2;*/
   -webkit-transition: all 0.3s ease-out;
      -moz-transition: all 0.3s ease-out;
       -ms-transition: all 0.3s ease-out;

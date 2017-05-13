@@ -15,9 +15,24 @@ body.application {
     background-color: #2164f3;
     border-color: #2164f3;
 }
+a.navbar-brand.title.col-sm-4 {
+    padding-top: 22px;
+}
 
 a.nav-item-pill-name.introjs-showElement{
     color: #ff6600;
+}
+.nav-item-pill{
+    width: 200px;
+    float: right;
+    color: white;
+    padding-top: 22px;
+}
+
+.nav-item-pill-name{
+    color: white;
+    text-align: center;
+    font-size: 12px;
 }
 .nav>li>a {
     padding: 2px 4px;
@@ -26,7 +41,7 @@ a.nav-item-pill-name.introjs-showElement{
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
     color: #ff6600;
-    background-color: transparent;
+    background-color: whitesmoke;
 }
 
 .nav>li>a {
@@ -70,18 +85,7 @@ a:hover{
 #location-pie-chart{
     padding-top:10px;
 }
-.nav-item-pill{
-    width: 200px;
-    float: right;
-    color: white;
-    padding-top: 5px;
-}
 
-.nav-item-pill-name{
-    color: white;
-    text-align: left;
-    font-size: 12px;
-}
 .fa-refresh .fa-search{
     color: white;
 }
