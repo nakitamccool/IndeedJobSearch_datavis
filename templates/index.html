@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Developer Job Search</title>
     <meta name="author" content="Developer Job Search Dashboard">
-    <link rel="icon" href="static/img/magnifiericon.png" />
+    <link rel="icon" href="static/img/magnifiericon.png"/>
     <link rel="stylesheet" href="static/lib/css/introjs.css"/>
     <link rel="stylesheet" href="/static/lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/lib/css/keen-dashboards.css">
@@ -20,32 +19,32 @@
 <body class="application">
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="./">Developer Job Search</a>
-        </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="./">Developer Job Search</a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item-pill">
-                    <a class="nav-item-pill-name" autofocus onclick="javascript:introJs().start();"
-                       data-step="1"
-                       data-intro="Are you looking for a developer job? This dashboard is here to help. Click next to see how it works..."
-                       style="font-weight: normal" data-position="left"><i id="fa-question" class="fa fa-question"></i>
-                        How does this work?</a>
-                </li>
-                <li class="nav-item-pill">
-                    <a class="nav-item-pill-name" href="./"><i id="fa-refresh" class="fa fa-refresh"></i> Reset all
-                        filters</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item-pill">
+                <a class="nav-item-pill-name" autofocus onclick="javascript:introJs().start();"
+                   data-step="1"
+                   data-intro="Are you looking for a developer job? This dashboard is here to help. Click next to see how it works..."
+                   style="font-weight: normal" data-position="left"><i id="fa-question" class="fa fa-question"></i>
+                    How does this work?</a>
+            </li>
+            <li class="nav-item-pill">
+                <a class="nav-item-pill-name" href="./"><i id="fa-refresh" class="fa fa-refresh"></i> Reset all
+                    filters</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
 
     <!-- /.container-fluid -->
 </nav>
@@ -226,8 +225,34 @@
     </div>
 </div>
 
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"
+   title="Click to return on the top page" data-toggle="tooltip" data-placement="left">
+    <img src="/static/img/scroll-arrow.png"/>
+</a>
+
 <hr>
-<p class="small text-muted"> Data Dashboard &#9829; designed and developed by Nakita McCool<a></a></p>
+<footer>
+    <div class="container">
+        <p class="footertext">This website was designed and built by Nakita McCool.</p>
+        <ul class="list-inline">
+            <li>
+                <a href="mailto:nakitamccool@gmail.com"><i class="nmccontact fa fa-envelope"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-github"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-google-plus"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-linkedin"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-twitter"></i></a>
+            </li>
+        </ul>
+    </div>
+</footer>
 
 <script src="/static/lib/js/jquery.min.js"></script>
 <script src="/static/lib/js/bootstrap.min.js"></script>
@@ -238,6 +263,7 @@
 
 <script src="/static/lib/js/keen.min.js"></script>
 <script src="/static/js/graph.js"></script>
-<script src="static/lib/js/intro.js" type="text/javascript"></script>
+<script src="static/lib/js/intro.js"></script>
+<script src="static/js/backtotopbutton.js"></script>
 </body>
 </html>

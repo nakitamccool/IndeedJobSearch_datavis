@@ -9,7 +9,7 @@ Links on white background  mediumpurple: #7977cc*/
 /*Background*/
 body.application {
     background: #f5f6f7;
-    padding: 85px 20px;
+    padding: 85px 20px 0px 20px;
 }
 
 /*Navbar*/
@@ -162,3 +162,38 @@ td, th {
     text-align: left;
     padding: 1px;
 }
+
+footer {
+    background-color: whitesmoke;
+    padding: 0px 0px;
+    color: royalblue;
+    text-align: center;
+    font-size: 8px;
+}
+
+.footertext{
+    margin-bottom: 2px;
+}
+
+.nmccontact {
+    color: royalblue;
+    padding: 1px;
+}
+
+/*Link to top*/
+a#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 3px;
+    right: 30px;
+    display:none;
+    background-color: whitesmoke;
+    border: whitesmoke;
+    box-shadow: 1px 2px 2px #e2e2e2;
+}
+
+
+a#back-to-top:hover, a#back-to-top:active{
+    background-color: orange;
+}
+
