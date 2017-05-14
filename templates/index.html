@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DevJobs.ie</title>
+    <title>Developer Job Search Dashboard</title>
     <link rel="stylesheet" href="static/lib/css/introjs.css"/>
     <link rel="stylesheet" href="/static/lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/lib/css/keen-dashboards.css">
@@ -33,7 +33,7 @@
                 <li class="nav-item-pill">
                     <a class="nav-item-pill-name" autofocus onclick="javascript:introJs().start();"
                        data-step="1"
-                       data-intro="Looking for a developer job? This dashboard is here to help. Click next to see how it works.."
+                       data-intro="Are you looking for a developer job? This dashboard is here to help. Click next to see how it works..."
                        style="font-weight: normal" data-position="left"><i id="fa-question" class="fa fa-question"></i>
                         How does this work?</a>
                 </li>
@@ -55,7 +55,7 @@
             <!-- Location -->
             <div class="col-lg-3 col-md-6">
                 <div class="chart-wrapper" data-step="2"
-                     data-intro="Use this chart to filter on jobs by your preferred location(s). This will automatically update the data in the following charts"
+                     data-intro="Use this chart to filter on jobs by your preferred location(s). Filtering by location will automatically update the data in the remaining charts to show job posts matching your preferred location(s) only."
                      style="font-weight: normal" data-position="right">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-map-marker"></i>Where can I find a developer job?</p>
@@ -68,11 +68,10 @@
             <!-- Location -->
             <!-- Role -->
             <div class="col-lg-3 col-md-6">
-                <div class="chart-wrapper" data-step="3" data-intro="Use this chart to filter on your preferred roles.
-                    In order to help you along, I've categorised the ads into 4 key roles (front end, back end, full stack
-                    and DevOps) based on the job title provided. Quite a few ads aren't so easily categorised from just a
+                <div class="chart-wrapper" data-step="3" data-intro="Now that you've filtered by location, you may use this chart to filter on your preferred roles.
+                    In order to help you along, this chart has simplified job posts into 5 key categories (Front end, Back end, full stack, DevOps and Not specified) based on the job title provided. Quite a few ads aren't so easily categorised from just a
                     job title, so they sit in the 'Not specified' category - you'll be able to find out more from the links
-                    to the full job ad available in the results table"
+                    to the full job ad available in the results table."
                      style="font-weight: normal" data-position="right">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-id-card-o"></i>What types of roles are on offer?</p>
@@ -85,9 +84,9 @@
             <!-- Role -->
             <!-- Level -->
             <div class="col-lg-3 col-md-6">
-                <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by level of
-                    experience being sought. Again, I've categorised job ads based on their title and snippet entries -
-                    further details available in the full job post. "
+                <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by the level of
+                    experience being sought for a developer job. This chart has categorised job posts based on their title and snippet entries -
+                    for further details please click on the link to the full job post in the results table. "
                      style="font-weight: normal" data-position="left">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-code-fork"></i>What level of experience is being sought?</p>
@@ -101,7 +100,7 @@
             <!-- Industry -->
             <div class="col-lg-3 col-md-6">
                 <div class="chart-wrapper" data-step="5" data-intro="Interested in exploring different industries
-                    employing developers? Use this chart to apply filters and see which employers from your preferred industry are hiring"
+                    employing developers? Use this chart to apply filters and see which employers from your preferred industry are hiring."
                      style="font-weight: normal" data-position="left">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-industry"></i>Which industries are hiring developers?</p>
@@ -119,7 +118,7 @@
             <!-- Company row -->
             <div class="col-lg-3 col-md-12">
                 <div class="chart-wrapper" data-step="6" data-intro="This chart identifies the top employers hiring developers
-                    (by no. of opportunities advertised). Click on any preferred employers to see their job adverts in the results table"
+                    (by number of opportunities advertised on Indeed.com). Click on any preferred employers to see their job adverts in the results table."
                      style="font-weight: normal" data-position="right">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-handshake-o"></i>Who is hiring developers?</p>
@@ -134,7 +133,7 @@
             <!-- Results table -->
             <div class="col-lg-6 col-md-12">
                 <div class="chart-wrapper" data-step="7" data-intro="This helpful counter lets you know how many job
-                     adverts match your search based on the filters you've applied. Note that this will automatically update if you change any of your filters."
+                     posts match your search based on the filters you've applied. Note that this will automatically update if you go back and change any of your filters."
                      style="font-weight: normal" data-position="top">
                     <div class="chart-title">
                         <div id="resultslog">
@@ -146,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="chart-wrapper" data-step="8" data-intro="This table displays your results based on the filters,
+                <div class="chart-wrapper" data-step="8" data-intro="This table displays your first five results based on your filters,
                      use the links provided to find out more about any jobs that peak your interest!"
                      style="font-weight: normal" data-position="top">
                     <div class="chart-title">
@@ -166,7 +165,7 @@
             <!-- Keyword hits -->
             <div class="col-lg-3 col-md-12">
                 <div class="chart-wrapper" data-step="9" data-intro="This summary table lists the number of times a
-                    keyword (be that a language, framework, tool etc.) has been found in an ad in your results table."
+                    keyword (be that a language, framework, tool etc.) has been listed in a post in your results table."
                      style="font-weight: normal" data-position="left">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-thumbs-o-up"></i>Keyword hits</p>
@@ -206,7 +205,9 @@
 
             <!-- Full results -->
             <div class="col-lg-12 col-md-12">
-                <div class="chart-wrapper">
+                <div class="chart-wrapper" data-step="10" data-intro="This table displays all results based on your filters,
+                     use the links provided to find out more about any jobs that peak your interest!"
+                     style="font-weight: normal" data-position="left">
                     <div class="chart-title">
                         <p class="keyline"><i class="fa fa-list"></i>Full list of results</p>
                     </div>
