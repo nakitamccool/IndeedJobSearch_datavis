@@ -49,6 +49,8 @@ a.navbar-brand{
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
     color: orange;
+    cursor: pointer;
+    cursor: hand;
 }
 
 a.nav-item-pill-name.introjs-showElement{
