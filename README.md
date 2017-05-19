@@ -18,17 +18,16 @@ the projectdocumentation folder.
 
 A demo of this site is available [here](https://nmc17-devjob-dashboard.herokuapp.com/)
 
-
 ## Getting started / Deployment
 
 * If you wish to deploy this app locally, please clone or download this repo and use the following guidelines:
 
-## Python
+### Python
 You must have Python 2.7 installed on your system. Download the correct version for your operating system and follow the installation instructions.
 requirements.txt
 Create and activate a local virtual environment and pip install -r requirements.txt
 
-## Local Server
+### Local Server
 Run your app using the following commands in command line:
 $ export FLASK_APP=IndeedAPI.py
 $ flask run
@@ -39,7 +38,8 @@ Navigate to http://localhost:5000/ to view your app locally
 - See line 16 to 20 to configure to a database hosted by Heroku mLab MongoDB.
 
 
-* To deploy this app in a live environment, use the following guidelines:
+### Deploy to heroku
+To deploy this app in a live environment, use the following guidelines:
 
 1. Create a new heroku app and make a note of the domain name for your site
 2. If you haven't done so already (by pip install -r requirements.txt), install the gunicorn package in the project
