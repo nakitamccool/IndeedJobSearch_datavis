@@ -16,7 +16,7 @@ the projectdocumentation folder.
 
 ## Demo
 
-A demo of this site is available [here](https://nmc17-devjob-dashboard.herokuapp.com/)
+A demo of this site is available [here](https://nmc17-devjob-dashboard.herokuapp.com/).
 
 ## Getting started / Deployment
 
