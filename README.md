@@ -16,7 +16,7 @@ the projectdocumentation folder.
 
 ## Demo
 
-A demo of this site is available[here](https://nmc17-devjob-dashboard.herokuapp.com/)
+A demo of this site is available [here](https://nmc17-devjob-dashboard.herokuapp.com/)
 
 
 ## Getting started / Deployment
@@ -94,8 +94,8 @@ containers are responsive, the charts are not fully responsive due to limitation
 
 ## Acknowledgments
 
-* Template by[Bootstrap](https://startbootstrap.com/)
-* Data sourced from[Indeed](https://www.indeed.com/publisher)
-* Loading bar by[Pace](http://github.hubspot.com/pace/docs/welcome/)
+* Template by [Bootstrap](https://startbootstrap.com/)
+* Data sourced from [Indeed](https://www.indeed.com/publisher)
+* Loading bar by [Pace](http://github.hubspot.com/pace/docs/welcome/)
 
 
