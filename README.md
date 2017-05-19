@@ -38,6 +38,21 @@ Navigate to http://localhost:5000/ to view your app locally
 - See line 9 to 14 to configure to a local database.
 - See line 16 to 20 to configure to a database hosted by Heroku mLab MongoDB.
 
+
+* To deploy this app in a live environment, use the following guidelines:
+
+1. Create a new heroku app and make a note of the domain name for your site
+2. If you haven't done so already (by pip install -r requirements.txt), install the gunicorn package in the project
+3. Go to the command line and type in: pip freeze > requirements.txt
+4. Create a Procfile, containing the words web: gunicorn ***:app
+5. Replace *** with the name of your app, for this example the app name is IndeedAPI
+6. Git commit and push to your Github repo
+7. Link your heroku app to your Github repo: git remote add heroku <git-url-for-your-app>
+8. Go to add-ons within your heroku app, create your mLab add on. Follow mLab instructions to connect to your db.
+9. Reconfigure your db connection in the IndeedAPI file to match the mLab
+10. Commit your changes to Github, go to Heroku and run your app
+
+
 ## Hosting
 
 This app is hosted by Heroku – a container-based cloud Platform as a Service (PaaS) that allows you to deploy, manage, 
