@@ -24,7 +24,7 @@ A demo of this site is available [here](https://nmc17-devjob-dashboard.herokuapp
 * If you wish to deploy this app locally, please clone or download this repo and use the following guidelines:
 
 ## Python
-You must have Python 2.7 installed on your system, available here. Download the correct version for your operating system and follow the installation instructions.
+You must have Python 2.7 installed on your system. Download the correct version for your operating system and follow the installation instructions.
 requirements.txt
 Create and activate a local virtual environment and pip install -r requirements.txt
 
